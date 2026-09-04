@@ -7,9 +7,9 @@
 body {
     min-height: 100vh;
     width: 100vw;
-    background: #02000a;
-    background-image: radial-gradient(circle at 50% 50%, #1a0033 0%, #02000a 100%);
-    font-family: 'Rubik Glitch', cursive;
+    background: #12141c;
+    background-image: radial-gradient(circle at 50% 50%, #1e2230 0%, #12141c 100%);
+    font-family: 'Patrick Hand', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,29 +18,27 @@ body {
     padding: 20px;
 }
 
-/* Insane Floating Creatures & Symbols */
+/* Subtle Floating Elements */
 .space-creature {
     position: absolute;
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     z-index: 1;
-    animation: alienMadness 5s ease-in-out infinite alternate;
+    animation: alienMadness 6s ease-in-out infinite alternate;
     user-select: none;
     pointer-events: none;
-    filter: drop-shadow(0 0 20px #ff00ff);
+    opacity: 0.6;
 }
 
-.c-1 { top: 3%; left: 3%; animation-duration: 4s; }
-.c-2 { top: 8%; right: 5%; animation-duration: 6s; transform: scale(1.3); }
-.c-3 { top: 78%; left: 6%; animation-duration: 4.5s; }
-.c-4 { top: 75%; right: 8%; animation-duration: 5.5s; }
-.c-5 { top: 40%; left: 1%; animation-duration: 3.8s; font-size: 5.5rem; }
-.c-6 { top: 45%; right: 2%; animation-duration: 4.2s; }
-.c-7 { top: 20%; left: 12%; animation-duration: 3s; filter: drop-shadow(0 0 20px #00ffff); }
-.c-8 { top: 85%T; left: 42%; animation-duration: 4.8s; }
+.c-1 { top: 5%; left: 5%; animation-duration: 5s; }
+.c-2 { top: 12%T; right: 8%; animation-duration: 7s; }
+.c-3 { top: 80%; left: 8%; animation-duration: 5.5s; }
+.c-4 { top: 75%T; right: 10%; animation-duration: 6.5s; }
+.c-5 { top: 45%; left: 2%; animation-duration: 4.5s; }
+.c-6 { top: 50%; right: 4%; animation-duration: 5s; }
 
 @keyframes alienMadness {
-    0% { transform: translateY(0px) rotate(0deg) scale(1); filter: hue-rotate(0deg); }
-    100% { transform: translateY(-40px) rotate(35deg) scale(1.2); filter: hue-rotate(360deg); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-20px) rotate(10deg); }
 }
 
 /* Main Arena Layout */
@@ -48,134 +46,123 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 950px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-/* Glitchy Extraordinary Title */
-.glitch-title {
-    font-family: 'Kablammo', cursive;
-    font-size: clamp(3rem, 8vw, 6rem);
-    color: #ff0055;
-    text-shadow: 4px 4px 0px #00ffff, -4px -4px 0px #ffea00;
+/* Funny, Bouncy English Title */
+.funny-title {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: clamp(3.2rem, 8vw, 6rem);
+    color: #ff758c;
+    text-shadow: 3px 3px 0px #333;
     letter-spacing: 2px;
     margin-bottom: 5px;
-    animation: titleGlitch 1.5s steps(2, start) infinite;
+    animation: titleBounce 2s ease-in-out infinite alternate;
 }
 
-.sub-script {
-    color: #00ffff;
-    text-shadow: -4px -4px 0px #ff0055, 4px 4px 0px #ffea00;
+/* Cool Malayalam Title using Baloo Chettan 2 */
+.malayalam-title {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: 800;
+    color: #4facfe;
+    text-shadow: 3px 3px 0px #333;
+    font-size: 0.9em;
 }
 
-@keyframes titleGlitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-4px, 4px); }
-    40% { transform: translate(-4px, -4px); }
-    60% { transform: translate(4px, 4px); }
-    80% { transform: translate(4px, -4px); }
-    100% { transform: translate(0); }
+@keyframes titleBounce {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-6px) scale(1.02); }
 }
 
 .cyber-subtitle {
-    font-family: 'Zilla Slab Highlight', cursive;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    color: #ffea00;
-    text-shadow: 0 0 10px #ffea00;
-    margin-bottom: 45px;
-    letter-spacing: 2px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: #b8c1ec;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
 }
 
 /* Inputs Layout */
 .inputs-grid {
     width: 100%;
     display: flex;
-    gap: 35px;
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .field-wrap {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     text-align: left;
 }
 
 .field-wrap label {
     display: block;
-    font-family: 'Zilla Slab Highlight', cursive;
-    font-size: 1rem;
-    color: #00ffff;
-    margin-bottom: 12px;
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px #00ffff;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    color: #4facfe;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
-/* Insane Input Box Shapes & Animated Fonts */
+/* Clean, Smooth Input Boxes */
 .field-wrap input {
     width: 100%;
-    padding: 22px 25px;
-    font-size: 1.4rem;
-    font-family: 'Zilla Slab Highlight', cursive;
-    background: rgba(10, 0, 26, 0.9);
-    border: 4px solid #ff0055;
-    border-radius: 25px 50px 25px 50px;
-    color: #00ffff;
+    padding: 18px 22px;
+    font-size: 1.2rem;
+    font-family: 'Patrick Hand', cursive;
+    background: #1a1d29;
+    border: 3px solid #ff758c;
+    border-radius: 16px;
+    color: #ffffff;
     outline: none;
-    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
 }
 
 .field-wrap input::placeholder {
-    color: #ff00ff55;
-    font-family: 'Rubik Glitch', cursive;
-    font-size: 1.1rem;
+    color: #565f89;
 }
 
 .field-wrap input:focus {
-    transform: scale(1.05) rotate(1deg);
-    border-color: #ffea00;
-    background: #15002b;
-    box-shadow: 0 0 40px #ffea00, inset 0 0 15px #ff0055;
-    color: #ffea00;
+    transform: scale(1.02);
+    border-color: #4facfe;
+    background: #222639;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
 }
 
-/* Wild Hyper-Button */
+/* Smooth, Classy Animated Button */
 #calc-btn {
     width: 100%;
-    max-width: 520px;
-    background: linear-gradient(90deg, #ff0055, #ffea00, #00ffff, #ff00ff);
-    background-size: 400% 400%;
-    animation: hyperDrive 3s linear infinite;
-    border: 5px solid #ffffff;
-    color: #02000a;
-    font-family: 'Kablammo', cursive;
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    padding: 25px;
-    border-radius: 100px;
+    max-width: 450px;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    border: none;
+    color: #ffffff;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    letter-spacing: 1px;
+    padding: 20px;
+    border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 0 30px #00ffff;
+    box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
     transition: all 0.2s ease-in-out;
     margin-top: 10px;
 }
 
-@keyframes hyperDrive {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 #calc-btn:hover {
-    transform: scale(1.08) rotate(-2deg);
-    box-shadow: 0 0 60px #ff0055, 0 0 20px #ffea00;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(255, 117, 140, 0.6);
 }
 
 #calc-btn:active {
-    transform: scale(0.95);
+    transform: translateY(2px);
 }
 
 /* Hidden Utility */
@@ -185,48 +172,45 @@ body {
 
 /* Loader & Results */
 #loading {
-    margin-top: 40px;
-    font-family: 'Zilla Slab Highlight', cursive;
-    font-size: 1.6rem;
-    color: #ffea00;
-    text-shadow: 0 0 15px #ffea00;
-    animation: alienPulse 0.6s infinite alternate;
+    margin-top: 35px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.4rem;
+    color: #ffeb3b;
+    animation: pulseLoader 0.8s infinite alternate;
 }
 
-@keyframes alienPulse {
-    0% { opacity: 0.3; transform: scale(0.95); }
+@keyframes pulseLoader {
+    0% { opacity: 0.5; transform: scale(0.95); }
     100% { opacity: 1; transform: scale(1.05); }
 }
 
 #result-box {
-    margin-top: 45px;
+    margin-top: 40px;
     width: 100%;
-    background: rgba(10, 0, 30, 0.95);
-    border: 5px solid #ffea00;
-    border-radius: 40px;
-    padding: 35px;
-    box-shadow: 0 0 50px rgba(255, 234, 0, 0.5);
-    animation: matrixPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    background: #1a1d29;
+    border: 3px solid #4facfe;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(79, 172, 254, 0.2);
+    animation: popIn 0.4s ease forwards;
 }
 
-@keyframes matrixPop {
-    0% { opacity: 0; transform: scale(0.7) rotate(-5deg); }
-    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 .res-title {
-    font-family: 'Kablammo', cursive;
-    font-size: 2rem;
-    color: #ff0055;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #ff0055;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 1.8rem;
+    color: #ff758c;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 #result-text {
-    font-family: 'Zilla Slab Highlight', cursive;
-    font-size: 1.5rem;
-    color: #00ffff;
-    line-height: 1.7;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3rem;
+    color: #ffffff;
+    line-height: 1.6;
 }
