@@ -11,16 +11,16 @@ async function calculateFilling() {
         return;
     }
 
-    // Dynamic Emoji Customization for the Animation
-    const itemAnimator = document.getElementById('item-animator');
-    const targetEmoji = document.getElementById('target-emoji');
+    // Map any input automatically using an expanded smart dynamic mapper
+    const targetContainer = document.getElementById('target-container');
+    const walkingFiller = document.getElementById('walking-filler');
     const loadingText = document.getElementById('loading-text');
 
-    itemAnimator.innerText = getFunnyEmoji(filler);
-    targetEmoji.innerText = getFunnyEmoji(container);
+    targetContainer.innerText = getSmartEmoji(container);
+    walkingFiller.innerText = getSmartEmoji(filler);
     loadingText.innerText = `🌀 Stuffing ${filler} into ${container}...`;
 
-    // Show loading animation stage, hide previous results
+    // Show realistic animation stage, hide previous results
     loading.classList.remove('hidden');
     resultBox.classList.add('hidden');
     calcBtn.disabled = true;
@@ -60,15 +60,58 @@ async function calculateFilling() {
     }
 }
 
-// Helper function to pick a fitting fun emoji based on text
-function getFunnyEmoji(text) {
+// Universal smart icon mapper to handle ANY input text dynamically
+function getSmartEmoji(text) {
     const t = text.toLowerCase();
+    
+    // Vehicles & Space
     if (t.includes('car') || t.includes('maruti') || t.includes('vehicle')) return '🚗';
+    if (t.includes('bus')) return '🚌';
+    if (t.includes('train')) return '🚆';
+    if (t.includes('plane') || t.includes('jet')) return '✈️';
+    if (t.includes('rocket') || t.includes('spaceship')) return '🚀';
+    if (t.includes('boat') || t.includes('ship')) return '🚢';
+    if (t.includes('bike') || t.includes('cycle')) return '🚲';
+    
+    // Animals & Insects
     if (t.includes('elephant')) return '🐘';
-    if (t.includes('samosa') || t.includes('food') || t.includes('snack')) return '🥟';
-    if (t.includes('room') || t.includes('house') || t.includes('bedroom')) return '🏠';
-    if (t.includes('moon') || t.includes('space') || t.includes('planet')) return '🌕';
-    if (t.includes('ocean') || t.includes('water') || t.includes('sea')) return '🌊';
+    if (t.includes('spider')) return '🕷️';
+    if (t.includes('snake')) return '🐍';
+    if (t.includes('dog')) return '🐕';
+    if (t.includes('cat')) return '🐈';
+    if (t.includes('monkey') || t.includes('ape')) return '🐒';
+    if (t.includes('lion') || t.includes('tiger')) return '🐅';
+    if (t.includes('fish')) return '🐠';
+    if (t.includes('bird')) return '🦅';
+    if (t.includes('ant')) return '🐜';
+    
+    // Food & Snacks
+    if (t.includes('samosa') || t.includes('dumpling') || t.includes('snack')) return '🥟';
     if (t.includes('coconut')) return '🥥';
-    return '📦'; // Default fallback emoji
+    if (t.includes('pizza')) return '🍕';
+    if (t.includes('burger')) return '🍔';
+    if (t.includes('coffee') || t.includes('tea')) return '☕';
+    if (t.includes('apple')) return '🍎';
+    if (t.includes('banana')) return '🍌';
+    if (t.includes('cake') || t.includes('sweet')) return '🎂';
+    
+    // Places & Nature
+    if (t.includes('room') || t.includes('house') || t.includes('bedroom')) return '🏠';
+    if (t.includes('moon') || t.includes('planet')) return '🌕';
+    if (t.includes('sun')) return '☀️';
+    if (t.includes('earth') || t.includes('world')) return '🌍';
+    if (t.includes('ocean') || t.includes('sea') || t.includes('water')) return '🌊';
+    if (t.includes('mountain') || t.includes('hill')) return '⛰️';
+    if (t.includes('pool') || t.includes('bucket')) return '🪣';
+    
+    // Everyday Objects
+    if (t.includes('phone') || t.includes('mobile')) return '📱';
+    if (t.includes('laptop') || t.includes('computer')) return '💻';
+    if (t.includes('book')) return '📖';
+    if (t.includes('bag')) return '🎒';
+    if (t.includes('box')) return '📦';
+    if (t.includes('pen')) return '🖊️';
+
+    // Fallback emoji if anything else is entered
+    return '✨';
 }
