@@ -25,7 +25,7 @@ async function calculateFilling() {
     resultBox.classList.add('hidden');
     calcBtn.disabled = true;
 
-    const prompt = `Act as a highly eccentric, funny, and slightly mad scientist. The user wants to know exactly how many ${filler} can fit inside a ${container}. Give a wildly creative, mathematically absurd, and humorous scientific breakdown with funny units of measurement. Keep it punchy and entertaining.`;
+    const prompt = `Act as a hyper-rational, hyper-logical physicist and data analyst. The user wants to know exactly how many ${filler} can fit inside a ${container}. Calculate this using rigorous, deadpan logic, precise estimation, and dry analytical breakdown. Keep it structured, factual, and intellectually sharp without being eccentric.`;
 
     try {
         const response = await fetch('/api/fetch-data', {
