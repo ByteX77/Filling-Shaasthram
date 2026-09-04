@@ -30,9 +30,9 @@ body {
 }
 
 .c-1 { top: 5%; left: 5%; animation-duration: 5s; }
-.c-2 { top: 12%T; right: 8%; animation-duration: 7s; }
+.c-2 { top: 12%; right: 8%; animation-duration: 7s; }
 .c-3 { top: 80%; left: 8%; animation-duration: 5.5s; }
-.c-4 { top: 75%T; right: 10%; animation-duration: 6.5s; }
+.c-4 { top: 75%; right: 10%; animation-duration: 6.5s; }
 .c-5 { top: 45%; left: 2%; animation-duration: 4.5s; }
 .c-6 { top: 50%; right: 4%; animation-duration: 5s; }
 
@@ -138,7 +138,7 @@ body {
     box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
 }
 
-/* Smooth, Classy Animated Button */
+/* Animated Button Styles */
 #calc-btn {
     width: 100%;
     max-width: 450px;
@@ -152,17 +152,40 @@ body {
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
-    transition: all 0.2s ease-in-out;
+    animation: buttonPulse 2s ease-in-out infinite;
     margin-top: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Match the Malayalam font inside the button */
+.btn-ml {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: 800;
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
+    }
+    50% {
+        transform: scale(1.04);
+        box-shadow: 0 12px 35px rgba(255, 117, 140, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
+    }
 }
 
 #calc-btn:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(255, 117, 140, 0.6);
+    animation: none;
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 15px 40px rgba(255, 117, 140, 0.8);
 }
 
 #calc-btn:active {
-    transform: translateY(2px);
+    transform: translateY(2px) scale(0.98);
 }
 
 /* Hidden Utility */
