@@ -193,9 +193,51 @@ body {
     display: none;
 }
 
+/* Animation Stage Styles */
+.animation-stage {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 120px;
+    margin: 30px auto 10px auto;
+    background: rgba(26, 29, 41, 0.8);
+    border: 2px dashed #ff758c;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.walking-item {
+    font-size: 3rem;
+    position: absolute;
+    left: 20px;
+    animation: walkAcross 2s linear infinite;
+}
+
+.target-container-anim {
+    font-size: 4rem;
+    position: absolute;
+    right: 30px;
+    animation: bounceTarget 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes walkAcross {
+    0% { left: 20px; transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(-15deg) translateY(-10px); }
+    100% { left: 280px; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes bounceTarget {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
 /* Loader & Results */
-#loading {
-    margin-top: 35px;
+#loading-text {
+    margin-top: 15px;
     font-family: 'Patrick Hand', cursive;
     font-size: 1.4rem;
     color: #ffeb3b;
