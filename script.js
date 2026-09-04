@@ -25,8 +25,7 @@ async function calculateFilling() {
     resultBox.classList.add('hidden');
     calcBtn.disabled = true;
 
-    const prompt = `Act as a hyper-rational, hyper-logical physicist and data analyst. The user wants to know exactly how many ${filler} can fit inside a ${container}. Calculate this using rigorous, deadpan logic, precise estimation, and dry analytical breakdown. Keep it structured, factual, and intellectually sharp without being eccentric.`;
-
+    const prompt = `Provide a concise, direct logical calculation of how many ${filler} fit inside a ${container}. Output ONLY 3 short bullet points containing: 1. Vessel Volume, 2. Item Volume, 3. Final Calculated Quantity. No long introductions or multiple interpretations.`;
     try {
         const response = await fetch('/api/fetch-data', {
             method: 'POST',
