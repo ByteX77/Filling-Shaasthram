@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filling ശാസ്ത്രം</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Chilanka&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title"><span class="eng">Filling</span> <span class="mal">ശാസ്ത്രം</span></h1>
+        <p class="subtitle">The highly scientific, completely useless volume calculator!</p>
 
+        <div class="input-section">
+            <div class="input-group">
+                <label for="container-obj">What do you want to fill?</label>
+                <input type="text" id="container-obj" placeholder="e.g., A Maruti 800, My Bedroom, The Moon">
+            </div>
+
+            <div class="input-group">
+                <label for="filler-obj">What will you fill it with?</label>
+                <input type="text" id="filler-obj" placeholder="e.g., Coconuts, Elephants, Samosas">
+            </div>
+
+            <button id="calculate-btn" onclick="calculateFilling()">Do the ശാസ്ത്രം! (Calculate)</button>
+        </div>
+
+        <div id="loading" class="hidden">Consulting the ancient scrolls (Loading...) 🧠✨</div>
+        
+        <div id="result-box" class="hidden">
+            <h2>Result:</h2>
+            <p id="result-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
