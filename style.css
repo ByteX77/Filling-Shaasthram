@@ -7,8 +7,9 @@
 body {
     min-height: 100vh;
     width: 100vw;
-    background: #0f051d;
-    font-family: 'Permanent Marker', cursive, sans-serif;
+    background: #02000a;
+    background-image: radial-gradient(circle at 50% 50%, #1a0033 0%, #02000a 100%);
+    font-family: 'Rubik Glitch', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,160 +18,164 @@ body {
     padding: 20px;
 }
 
-/* Chaotic Floating Background Items */
-.bg-item {
+/* Insane Floating Creatures & Symbols */
+.space-creature {
     position: absolute;
-    font-size: 4rem;
+    font-size: 4.5rem;
     z-index: 1;
-    animation: chaoticFloat 6s ease-in-out infinite alternate;
+    animation: alienMadness 5s ease-in-out infinite alternate;
     user-select: none;
     pointer-events: none;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+    filter: drop-shadow(0 0 20px #ff00ff);
 }
 
-.e-1 { top: 5%; left: 5%; animation-duration: 5s; transform: rotate(-15deg); }
-.e-2 { top: 10%; right: 8%; animation-duration: 7s; transform: rotate(20deg); }
-.e-3 { top: 70%T; left: 8%; animation-duration: 4.5s; transform: rotate(10deg); }
-.e-4 { top: 75%; right: 10%; animation-duration: 6s; transform: rotate(-25deg); }
-.e-5 { top: 40%; left: 2%; animation-duration: 3.5s; transform: scale(1.2); }
-.e-6 { top: 45%; right: 3%; animation-duration: 5.5s; transform: rotate(12deg); }
-.e-7 { top: 25%T; left: 15%; animation-duration: 8s; font-size: 5rem; }
-.e-8 { top: 85%; left: 45%; animation-duration: 4s; transform: rotate(-10deg); }
+.c-1 { top: 3%; left: 3%; animation-duration: 4s; }
+.c-2 { top: 8%; right: 5%; animation-duration: 6s; transform: scale(1.3); }
+.c-3 { top: 78%; left: 6%; animation-duration: 4.5s; }
+.c-4 { top: 75%; right: 8%; animation-duration: 5.5s; }
+.c-5 { top: 40%; left: 1%; animation-duration: 3.8s; font-size: 5.5rem; }
+.c-6 { top: 45%; right: 2%; animation-duration: 4.2s; }
+.c-7 { top: 20%; left: 12%; animation-duration: 3s; filter: drop-shadow(0 0 20px #00ffff); }
+.c-8 { top: 85%T; left: 42%; animation-duration: 4.8s; }
 
-@keyframes chaoticFloat {
-    0% { transform: translateY(0px) rotate(0deg) scale(1); }
-    100% { transform: translateY(-30px) rotate(20deg) scale(1.15); }
+@keyframes alienMadness {
+    0% { transform: translateY(0px) rotate(0deg) scale(1); filter: hue-rotate(0deg); }
+    100% { transform: translateY(-40px) rotate(35deg) scale(1.2); filter: hue-rotate(360deg); }
 }
 
-/* Full Screen Open Layout (No Central Box) */
-.screen-wrapper {
+/* Main Arena Layout */
+.mad-arena {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 900px;
+    max-width: 950px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-/* Extraordinary Gigantic Title with Animation */
-.gigantic-title {
-    font-family: 'Bungee', cursive;
-    font-size: clamp(3rem, 7vw, 5.5rem);
+/* Glitchy Extraordinary Title */
+.glitch-title {
+    font-family: 'Kablammo', cursive;
+    font-size: clamp(3rem, 8vw, 6rem);
     color: #ff0055;
-    text-shadow: 4px 4px 0px #00ffff, 8px 8px 0px #ffea00, 12px 12px 0px #ff00ff;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-    animation: titleBounce 2s ease-in-out infinite alternate;
+    text-shadow: 4px 4px 0px #00ffff, -4px -4px 0px #ffea00;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    animation: titleGlitch 1.5s steps(2, start) infinite;
 }
 
-.malayalam-script {
+.sub-script {
     color: #00ffff;
-    text-shadow: 4px 4px 0px #ff0055, 8px 8px 0px #ffea00;
+    text-shadow: -4px -4px 0px #ff0055, 4px 4px 0px #ffea00;
 }
 
-@keyframes titleBounce {
-    0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(-8px) scale(1.02); }
+@keyframes titleGlitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-4px, 4px); }
+    40% { transform: translate(-4px, -4px); }
+    60% { transform: translate(4px, 4px); }
+    80% { transform: translate(4px, -4px); }
+    100% { transform: translate(0); }
 }
 
-.epic-tagline {
-    font-family: 'Luckiest Guy', cursive;
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+.cyber-subtitle {
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: #ffea00;
-    text-shadow: 2px 2px 0px #000;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
+    text-shadow: 0 0 10px #ffea00;
+    margin-bottom: 45px;
+    letter-spacing: 2px;
 }
 
-/* Seamless Inputs Layout */
-.inputs-flex-container {
+/* Inputs Layout */
+.inputs-grid {
     width: 100%;
     display: flex;
-    gap: 30px;
+    gap: 35px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
-.input-box-wrapper {
+.field-wrap {
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
     text-align: left;
 }
 
-.input-box-wrapper label {
+.field-wrap label {
     display: block;
-    font-family: 'Bungee', cursive;
-    font-size: 0.85rem;
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: 1rem;
     color: #00ffff;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 0px #000;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #00ffff;
 }
 
-/* Wild Fun Input Box Design */
-.input-box-wrapper input {
+/* Insane Input Box Shapes & Animated Fonts */
+.field-wrap input {
     width: 100%;
-    padding: 20px 25px;
-    font-size: 1.3rem;
-    font-family: 'Luckiest Guy', cursive;
-    background: rgba(255, 255, 255, 0.95);
-    border: 4px dashed #ff00ff;
-    border-radius: 50px;
-    color: #2b0b3d;
+    padding: 22px 25px;
+    font-size: 1.4rem;
+    font-family: 'Zilla Slab Highlight', cursive;
+    background: rgba(10, 0, 26, 0.9);
+    border: 4px solid #ff0055;
+    border-radius: 25px 50px 25px 50px;
+    color: #00ffff;
     outline: none;
-    box-shadow: 0 8px 25px rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.input-box-wrapper input::placeholder {
-    color: #aaa;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1rem;
+.field-wrap input::placeholder {
+    color: #ff00ff55;
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 1.1rem;
 }
 
-.input-box-wrapper input:focus {
-    transform: scale(1.04) rotate(-1deg);
-    border-color: #00ffff;
-    background: #ffffff;
-    box-shadow: 0 0 30px #00ffff, inset 0 0 10px rgba(0,255,255,0.5);
+.field-wrap input:focus {
+    transform: scale(1.05) rotate(1deg);
+    border-color: #ffea00;
+    background: #15002b;
+    box-shadow: 0 0 40px #ffea00, inset 0 0 15px #ff0055;
+    color: #ffea00;
 }
 
-/* Ultra Impressive Animated Button */
+/* Wild Hyper-Button */
 #calc-btn {
     width: 100%;
-    max-width: 500px;
-    background: linear-gradient(45deg, #ff0055, #ffea00, #00ffff, #ff00ff);
-    background-size: 300% 300%;
-    animation: buttonRainbow 4s linear infinite;
+    max-width: 520px;
+    background: linear-gradient(90deg, #ff0055, #ffea00, #00ffff, #ff00ff);
+    background-size: 400% 400%;
+    animation: hyperDrive 3s linear infinite;
     border: 5px solid #ffffff;
-    color: #0f051d;
-    font-family: 'Bungee', cursive;
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    padding: 22px 30px;
-    border-radius: 60px;
+    color: #02000a;
+    font-family: 'Kablammo', cursive;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    padding: 25px;
+    border-radius: 100px;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(255, 0, 85, 0.5);
+    box-shadow: 0 0 30px #00ffff;
     transition: all 0.2s ease-in-out;
-    text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
     margin-top: 10px;
 }
 
-@keyframes buttonRainbow {
+@keyframes hyperDrive {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
 #calc-btn:hover {
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 15px 40px #00ffff;
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 0 60px #ff0055, 0 0 20px #ffea00;
 }
 
 #calc-btn:active {
-    transform: translateY(2px) scale(0.98);
+    transform: scale(0.95);
 }
 
 /* Hidden Utility */
@@ -178,49 +183,50 @@ body {
     display: none;
 }
 
-/* Loader and Results */
+/* Loader & Results */
 #loading {
-    margin-top: 35px;
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 1.5rem;
+    margin-top: 40px;
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: 1.6rem;
     color: #ffea00;
-    text-shadow: 2px 2px 0px #000;
-    animation: pulseLoader 0.8s infinite alternate;
+    text-shadow: 0 0 15px #ffea00;
+    animation: alienPulse 0.6s infinite alternate;
 }
 
-@keyframes pulseLoader {
-    0% { opacity: 0.5; transform: scale(0.95); }
+@keyframes alienPulse {
+    0% { opacity: 0.3; transform: scale(0.95); }
     100% { opacity: 1; transform: scale(1.05); }
 }
 
 #result-box {
-    margin-top: 40px;
+    margin-top: 45px;
     width: 100%;
-    background: rgba(15, 5, 29, 0.9);
-    border: 5px solid #00ffff;
-    border-radius: 35px;
-    padding: 30px;
-    box-shadow: 0 15px 50px rgba(0, 255, 255, 0.4);
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    background: rgba(10, 0, 30, 0.95);
+    border: 5px solid #ffea00;
+    border-radius: 40px;
+    padding: 35px;
+    box-shadow: 0 0 50px rgba(255, 234, 0, 0.5);
+    animation: matrixPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-@keyframes popIn {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
+@keyframes matrixPop {
+    0% { opacity: 0; transform: scale(0.7) rotate(-5deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-.result-heading {
-    font-family: 'Bungee', cursive;
-    font-size: 1.6rem;
+.res-title {
+    font-family: 'Kablammo', cursive;
+    font-size: 2rem;
     color: #ff0055;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 0px #ffea00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff0055;
 }
 
 #result-text {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.4rem;
-    color: #ffffff;
-    line-height: 1.6;
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: 1.5rem;
+    color: #00ffff;
+    line-height: 1.7;
     letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
