@@ -17,7 +17,7 @@ async function calculateFilling() {
     loading.classList.remove('hidden');
     resultBox.classList.add('hidden');
 
-    const prompt = `Act as a highly eccentric, funny, and slightly mad scientist. The user wants to know exactly how many ${filler} can fit inside a ${container}. Give a completely absurd but extremely confident mathematical answer. Mention the exact ridiculous number, and give a funny 2-sentence explanation of the physics or logistics behind it. Keep it under 60 words.`;
+    const prompt = `Act as an intensely serious, bureaucratic logician. The user wants to calculate how many ${filler} can fit inside a ${container}. Give a mathematically "logical" explanation using absurdly strict real-world rules (like accounting for negative space, air resistance, or emotional baggage). Provide a precise fractional number and a deadpan 2-sentence logical justification. Keep it under 60 words.`;
 
     const url = '/api/fetch-data';
 
