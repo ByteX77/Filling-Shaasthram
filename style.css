@@ -1,121 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-    font-family: 'Comic Neue', cursive;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #ff6b6b, #ffbe0b, #3a86ff, #8338ec);
+    background-size: 400% 400%;
+    animation: crazyGradient 12s ease infinite;
+    font-family: 'Comic Neue', cursive, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    text-align: center;
+    overflow-x: hidden;
+    position: relative;
 }
 
-.container {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
-    max-width: 600px;
+@keyframes crazyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating background elements */
+.floating-decor {
+    position: absolute;
+    font-size: 3.5rem;
+    animation: floatAround 8s ease-in-out infinite alternate;
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+.decor-1 { top: 10%; left: 8%; animation-delay: 0s; }
+.decor-2 { top: 75%; left: 12%; animation-delay: 2s; }
+.decor-3 { top: 15%; right: 10%; animation-delay: 1s; }
+.decor-4 { top: 70%; right: 12%; animation-delay: 3s; }
+.decor-5 { top: 45%; left: 3%; animation-delay: 1.5s; font-size: 4rem; }
+
+@keyframes floatAround {
+    0% { transform: translateY(0px) rotate(0deg) scale(1); }
+    100% { transform: translateY(-25px) rotate(15deg) scale(1.1); }
+}
+
+/* Main Container filling screen */
+.mad-container {
+    position: relative;
+    z-index: 10;
     width: 90%;
-    border: 5px dashed #ff6b6b;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 6px dashed #ff007f;
+    border-radius: 35px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,190,11,,0.4);
+    text-align: center;
+    backdrop-filter: blur(5px);
 }
 
-.title {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    animation: bounce 2s infinite;
+.main-title {
+    font-family: 'Fredoka One', cursive, sans-serif;
+    font-size: 3.2rem;
+    color: #ff0055;
+    text-shadow: 3px 3px 0px #ffbe0b, 6px 6px 0px #3a86ff;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
 }
 
-.title .eng {
-    font-family: 'Bungee Shade', cursive;
-    color: #4ecdc4;
-}
-
-.title .mal {
-    font-family: 'Chilanka', cursive;
-    color: #ff6b6b;
-    font-weight: bold;
+.ml-script {
+    color: #7209b7;
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: bold;
     margin-bottom: 30px;
 }
 
+/* Input Styles */
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    text-align: left;
 }
 
-label {
+.input-group label {
     display: block;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-input {
-    width: 90%;
-    padding: 12px;
-    font-size: 1.1rem;
-    border: 3px solid #ffe66d;
-    border-radius: 10px;
-    outline: none;
-    font-family: 'Comic Neue', cursive;
-}
-
-input:focus {
-    border-color: #ff6b6b;
-}
-
-button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.3rem;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: 'Comic Neue', cursive;
+    font-size: 1.15rem;
     font-weight: bold;
-    box-shadow: 0px 5px 0px #c0392b;
-    transition: all 0.2s;
+    color: #2b2d42;
+    margin-bottom: 8px;
 }
 
-button:active {
-    transform: translateY(5px);
-    box-shadow: 0px 0px 0px #c0392b;
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-family: 'Comic Neue', cursive, sans-serif;
+    border: 4px solid #3a86ff;
+    border-radius: 20px;
+    background: #f8f9fa;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-#loading {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #ff9f43;
-    animation: blink 1s infinite;
+.input-group input:focus {
+    border-color: #ff007f;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transform: scale(1.01);
 }
 
-#result-box {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #ffe66d;
-    border-radius: 15px;
-    border: 3px solid #f39c12;
+/* Button Styles */
+#calc-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #ff007f, #ffbe0b);
+    border: 4px solid #fff;
+    color: white;
+    font-family: 'Fredoka One', cursive, sans-serif;
+    font-size: 1.6rem;
+    padding: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 0, 127, 0.4);
+    transition: all 0.2s ease-in-out;
+    margin-top: 10px;
+    text-shadow: 2px 2px 0px rgba(0,,0,0,0.2);
 }
 
-#result-text {
-    font-size: 1.2rem;
-    color: #2c3e50;
+#calc-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 190, 11, 0.6);
 }
 
+#calc-btn:active {
+    transform: translateY(2px);
+}
+
+/* Hidden Utility */
 .hidden {
     display: none;
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-15px);}
-    60% {transform: translateY(-7px);}
+/* Loader & Results */
+#loading {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #7209b7;
+    animation: pulseLoader 1s infinite alternate;
 }
 
-@keyframes blink {
-    50% {opacity: 0.5;}
+@keyframes pulseLoader {
+    0% { opacity: 0.4; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1.02); }
+}
+
+#result-box {
+    margin-top: 25px;
+    background: #f72585;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #ffd166;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#result-box h2 {
+    font-family: 'Fredoka One', cursive, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd166;
+}
+
+#result-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
